@@ -4,4 +4,4 @@
 
 
 ## 鸣谢：
-史寿伟的项目https://gitee.com/johntao/dss-docker-script
+史寿伟的项目https://gitee.com/sswater/dss-docker-script
