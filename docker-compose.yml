@@ -1,0 +1,94 @@
+version: '3'
+services:
+  mysql:
+    build:
+      context: ./build
+      dockerfile: mysql.dockerfile
+    #container_name: mysql
+    image: mysql:0.0.8
+    hostname: mysql
+  hadoop:
+    build:
+      context: ./build
+      dockerfile: hadoop.dockerfile
+    image: hadoop:0.0.8
+    hostname: hadoop
+    volumes:
+    - /root/docker/build/config/hadoop/etc:/opt/hadoop-2.7.2/etc
+  hive:
+    build:
+      context: ./build
+      dockerfile: hive.dockerfile
+    image: hive:0.0.8
+    hostname: hive
+    volumes:
+    - /root/docker/build/config/hadoop/etc:/opt/hadoop-2.7.2/etc
+    - /root/docker/build/config/hive/conf:/opt/apache-hive-2.3.3-bin/conf
+    links:
+    - mysql
+    - hadoop
+  spark:
+    build:
+      context: ./build
+      dockerfile: spark.dockerfile
+    image: spark:0.0.8
+    hostname: spark
+    volumes:
+    - /root/docker/build/config/hadoop/etc:/opt/hadoop-2.7.2/etc
+    - /root/docker/build/config/hive/conf:/opt/apache-hive-2.3.3-bin/conf
+    - /root/docker/build/config/spark/conf:/opt/spark-2.4.3-bin-hadoop2.7/conf
+    links:
+    - mysql
+    - hadoop
+    - hive
+  linkis:
+    build:
+      context: ./build
+      dockerfile: linkis.dockerfile
+    image: linkis:0.0.8
+    hostname: linkis
+    volumes:
+    - /root/docker/build/config/hadoop/etc:/opt/hadoop-2.7.2/etc
+    - /root/docker/build/config/hive/conf:/opt/apache-hive-2.3.3-bin/conf
+    - /root/docker/build/config/spark/conf:/opt/spark-2.4.3-bin-hadoop2.7/conf
+    - /root/docker/build/config/linkis/conf:/opt/linkis/conf
+    links:
+    - mysql
+    - hadoop
+    - hive
+    - spark
+  nginx:
+    build:
+      context: ./build
+      dockerfile: nginx.dockerfile
+    image: nginx:0.0.8
+    hostname: nginx
+    volumes:
+    - /root/docker/build/config/nginx/conf.d:/etc/nginx/conf.d
+    - /root/docker/build/config/nginx/nginx.conf:/etc/nginx/nginx.conf
+    links:
+    - mysql
+    - hadoop
+    - hive
+    - spark
+    - linkis
+    ports:
+    - 8088:8088
+  dss:
+    build:
+      context: ./build
+      dockerfile: dss.dockerfile
+    image: dss:0.0.8
+    hostname: dss
+    volumes:
+    - /root/docker/build/config/hadoop/etc:/opt/hadoop-2.7.2/etc
+    - /root/docker/build/config/hive/conf:/opt/apache-hive-2.3.3-bin/conf
+    - /root/docker/build/config/spark/conf:/opt/spark-2.4.3-bin-hadoop2.7/conf
+    - /root/docker/build/config/dss/conf:/opt/dss/conf
+    links:
+    - mysql
+    - hadoop
+    - hive
+    - spark
+    - linkis
+
