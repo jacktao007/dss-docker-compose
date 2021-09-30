@@ -1,0 +1,3 @@
+# Docker Compose 运行 WeDataSphere
+## 介绍
+本项目尝试将 WeDataSphere 运行在 Docker Compose 中。
