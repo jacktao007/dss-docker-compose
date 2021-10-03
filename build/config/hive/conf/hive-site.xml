@@ -53,9 +53,16 @@
 
 <property>  
   <name>hive.security.authorization.enabled</name>   
-  <value>true</value>  
+  <value>false</value>  
   <description>Enable or disable the hive client authorization</description>  
 </property>
+<property>  
+  <name>hive.security.authorization.createtable.owner.grants</name>  
+  <value>ALL</value>  
+  <description>The privileges automatically granted to the owner whenever  
+  a table gets created.An example like "select,drop" will grant select  
+  and drop privilege to the owner of the table</description>  
+</property>  
 
 </configuration>
 
