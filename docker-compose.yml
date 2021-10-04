@@ -9,6 +9,8 @@ services:
     hostname: mysql
     ports:
     - 3306:3306
+    networks:
+      - wds_net
   hadoop:
     build:
       context: ./build
@@ -20,6 +22,8 @@ services:
     ports:
     - 50070:50070
     - 8089:8089
+    networks:
+      - wds_net
   hive:
     build:
       context: ./build
@@ -32,6 +36,11 @@ services:
     links:
     - mysql
     - hadoop
+    depends_on:
+    - mysql
+    - hadoop
+    networks:
+    - wds_net
   spark:
     build:
       context: ./build
@@ -46,6 +55,12 @@ services:
     - mysql
     - hadoop
     - hive
+    depends_on:
+    - mysql
+    - hadoop
+    - hive
+    networks:
+    - wds_net
   linkis:
     build:
       context: ./build
@@ -62,9 +77,16 @@ services:
     - hadoop
     - hive
     - spark
+    depends_on:
+    - mysql
+    - hadoop
+    - hive
+    - spark
     ports:
     - 20303:20303
     - 9001:9001
+    networks:
+    - wds_net
   nginx:
     build:
       context: ./build
@@ -80,8 +102,16 @@ services:
     - hive
     - spark
     - linkis
+    depends_on:
+    - mysql
+    - hadoop
+    - hive
+    - spark
+    - linkis
     ports:
     - 8088:8088
+    networks:
+    - wds_net
   dss:
     build:
       context: ./build
@@ -99,4 +129,17 @@ services:
     - hive
     - spark
     - linkis
+    depends_on:
+    - mysql
+    - hadoop
+    - hive
+    - spark
+    - linkis
+    networks:
+    - wds_net
 
+networks:
+  wds_net:
+    ipam:
+      config:
+      - subnet: "172.31.238.0/24"
