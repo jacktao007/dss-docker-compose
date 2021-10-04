@@ -6,5 +6,5 @@
 docker >17.05  
 docker-compose >1.18  
 
-## 鸣谢：
+## 鸣谢
 史寿伟的项目https://gitee.com/sswater/dss-docker-script
