@@ -11,5 +11,5 @@ docker-compose >1.18
 0.9.x 链接：https://pan.baidu.com/s/1aF9DqV6cEra_cA9ctuXrBA 提取码：a9mj   
 
 ## 鸣谢
-史寿伟的项目https://gitee.com/sswater/dss-docker-script
+史寿伟的项目https://gitee.com/sswater/dss-docker-script  
 熊本人的版本https://pan.baidu.com/s/1aF9DqV6cEra_cA9ctuXrBA 提取码：a9mj   
