@@ -8,7 +8,8 @@ docker-compose >1.18
 
 ## 历史版本
 1.0.x单容器 链接: https://pan.baidu.com/s/1XmbThn9ofMGfIPtz1WlkTg 提取码: 6nc6   
-0.9.x单容器 链接：https://pan.baidu.com/s/1aF9DqV6cEra_cA9ctuXrBA 提取码：a9mj   
+0.9.x单容器 链接：https://pan.baidu.com/s/1aF9DqV6cEra_cA9ctuXrBA 提取码：a9mj    
+0.9.x官方k8s https://github.com/WeBankFinTech/Linkis/blob/dev-0.12.0/k8s/README.MD  
 
 ## 原始版本  
 https://osp-1257653870.cos.ap-guangzhou.myqcloud.com/WeDatasphere/DataSphereStudio/1.0.0/DSS-Linkis%E5%85%A8%E5%AE%B6%E6%A1%B620210831.zip  
