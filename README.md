@@ -6,6 +6,9 @@
 docker >17.05  
 docker-compose >1.18  
 
+## 配套资源
+https://www.aliyundrive.com/s/xDrqek49ikH 扩展名改为zip  
+
 ## 历史版本
 1.0.x单容器 链接: https://pan.baidu.com/s/1XmbThn9ofMGfIPtz1WlkTg 提取码: 6nc6   
 0.9.x单容器 链接：https://pan.baidu.com/s/1aF9DqV6cEra_cA9ctuXrBA 提取码：a9mj    
