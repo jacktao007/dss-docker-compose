@@ -5,6 +5,18 @@
 ## 版本要求
 docker >17.05  
 docker-compose >1.18  
+## 推荐硬件
+1.0.x 内存 > 16g  
+0.9.x 内存 > 25g  
+硬盘可用空间 >100g  
+
+## 1.0.x注意事项
+容器 schedulis 启动时由于启动脚本只检测10次，会提示异常，需进入容器手工启动schedulis服务  
+仅支持x86_64的cpu  
+
+## 0.9.x注意事项
+启动容器需要足够的内存和磁盘，否则可能会出现无法启动容器的情况   
+仅支持x86_64的cpu  
 
 ## 配套资源
 https://www.aliyundrive.com/s/xDrqek49ikH 扩展名改为zip  
