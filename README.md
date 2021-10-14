@@ -21,7 +21,7 @@ Linkis1.0常见问题和解决办法  https://docs.qq.com/doc/DWlN4emlJeEJxWlR0
 仅支持x86_64的cpu  
 WeDataSphere 常见问题(含DSS，Linkis) https://docs.qq.com/doc/DSGZhdnpMV3lTUUxq  
 
-## 版本
+## 容器化版本下载
 1.0.x docker compose https://www.aliyundrive.com/s/xDrqek49ikH 扩展名改为zip  
 1.0.x单容器(推荐) 链接: https://pan.baidu.com/s/1Fk-XPVPU7fvhwwFJhrbHSA 提取码: 9pvb  
 0.9.x单容器 链接：https://pan.baidu.com/s/1aF9DqV6cEra_cA9ctuXrBA 提取码：a9mj    
