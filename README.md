@@ -1,6 +1,7 @@
 # Docker Compose 运行 WeDataSphere
 ## 介绍
-本项目尝试将 WeDataSphere 运行在 Docker Compose 中。
+本项目尝试将 WeDataSphere 运行在 Docker Compose 中，非稳定版。  
+推荐使用1.0.x单容器版本  
 
 ## 版本要求
 docker >17.05  
