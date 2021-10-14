@@ -10,7 +10,7 @@ docker-compose >1.18
 https://www.aliyundrive.com/s/xDrqek49ikH 扩展名改为zip  
 
 ## 历史版本
-1.0.x单容器 链接: https://pan.baidu.com/s/1Fk-XPVPU7fvhwwFJhrbHSA 提取码: 9pvb 
+1.0.x单容器 链接: https://pan.baidu.com/s/1Fk-XPVPU7fvhwwFJhrbHSA 提取码: 9pvb  
 0.9.x单容器 链接：https://pan.baidu.com/s/1aF9DqV6cEra_cA9ctuXrBA 提取码：a9mj    
 0.9.x官方k8s https://github.com/WeBankFinTech/Linkis/blob/dev-0.12.0/k8s/README.MD  
 
