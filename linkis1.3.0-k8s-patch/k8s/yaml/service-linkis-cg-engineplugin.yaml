@@ -1,0 +1,18 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: headless-linkis-cg-engineplugin
+  labels:
+    app: headless-linkis-cg-engineplugin
+    service: headless-linkis-cg-engineplugin
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 9106
+      targetPort: 9106
+  selector:
+    app: linkis-cg-engineplugin
+  clusterIP: None
+  type: ClusterIP
+  sessionAffinity: None

@@ -1,0 +1,18 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: linkis-mg-eureka
+  labels:
+    app: linkis-mg-eureka
+    service: linkis-mg-eureka
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 20303
+      targetPort: 20303
+  selector:
+    app: linkis-mg-eureka
+  type: NodePort
+  sessionAffinity: None
+  externalTrafficPolicy: Cluster

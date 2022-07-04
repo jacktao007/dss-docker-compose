@@ -1,0 +1,120 @@
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+# 
+#   http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: spark-config
+  namespace: preprod
+  selfLink: /api/v1/namespaces/preprod/configmaps/spark-config
+  uid: e290ddd8-9e84-4397-8d54-890ab13c06dd
+  resourceVersion: '778679'
+  creationTimestamp: '2022-06-30T15:52:49Z'
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"v1","data":{"core-site.xml":"\u003c?xml version=\"1.0\"
+      encoding=\"UTF-8\"?\u003e\n\u003c?xml-stylesheet type=\"text/xsl\"
+      href=\"configuration.xsl\"?\u003e\n\u003c!--\n  Licensed under the Apache
+      License, Version 2.0 (the \"License\");\n  you may not use this file
+      except in compliance with the License.\n  You may obtain a copy of the
+      License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless
+      required by applicable law or agreed to in writing, software\n 
+      distributed under the License is distributed on an \"AS IS\" BASIS,\n 
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied.\n  See the License for the specific language governing
+      permissions and\n  limitations under the License. See accompanying LICENSE
+      file.\n--\u003e\n\n\u003c!-- Put site-specific property overrides in this
+      file. --\u003e\n\n\u003cconfiguration\u003e\n  
+      \u003cproperty\u003e\n     
+      \u003cname\u003efs.default.name\u003c/name\u003e\n     
+      \u003cvalue\u003ehdfs://localhost:9000\u003c/value\u003e \n  
+      \u003c/property\u003e\n\u003c/configuration\u003e\n","hive-site.xml":"\u003c?xml
+      version=\"1.0\"?\u003e\n\u003c?xml-stylesheet type=\"text/xsl\"
+      href=\"configuration.xsl\"?\u003e\n\u003cconfiguration\u003e\n\t\u003cproperty\u003e\n\t 
+      \u003cname\u003ejavax.jdo.option.ConnectionURL\u003c/name\u003e\n\t 
+      \u003cvalue\u003ejdbc:mysql://127.0.0.1:3306/metastore?createDatabaseIfNotExist=true\u0026amp;useSSL=false\u003c/value\u003e\n\t 
+      \u003cdescription\u003eJDBC connect string for a JDBC
+      metastore\u003c/description\u003e\n\t\u003c/property\u003e\n\n\t\u003cproperty\u003e\n\t 
+      \u003cname\u003ejavax.jdo.option.ConnectionDriverName\u003c/name\u003e\n\t 
+      \u003cvalue\u003ecom.mysql.jdbc.Driver\u003c/value\u003e\n\t 
+      \u003cdescription\u003eDriver class name for a JDBC
+      metastore\u003c/description\u003e\n\t\u003c/property\u003e\n\n\t\u003cproperty\u003e\n\t 
+      \u003cname\u003ejavax.jdo.option.ConnectionUserName\u003c/name\u003e\n\t 
+      \u003cvalue\u003eroot\u003c/value\u003e\n\t 
+      \u003cdescription\u003eusername to use against metastore
+      database\u003c/description\u003e\n\t\u003c/property\u003e\n\n\t\u003cproperty\u003e\n\t 
+      \u003cname\u003ejavax.jdo.option.ConnectionPassword\u003c/name\u003e\n\t 
+      \u003cvalue\u003e123456\u003c/value\u003e\n\t 
+      \u003cdescription\u003epassword to use against metastore
+      database\u003c/description\u003e\n\t\u003c/property\u003e\n\n\u003cproperty\u003e\n\u003cname\u003ehive.metastore.warehouse.dir\u003c/name\u003e\n\u003cvalue\u003e/user/hive/warehouse\u003c/value\u003e\n\u003cdescription\u003elocation
+      of default database for the
+      warehouse\u003c/description\u003e\n\u003c/property\u003e\n\n\u003cproperty\u003e\n   
+      \u003cname\u003ehive.metastore.schema.verification\u003c/name\u003e\n   
+      \u003cvalue\u003efalse\u003c/value\u003e\n\u003c/property\u003e\n\n\u003cproperty\u003e\n\t\u003cname\u003ehive.cli.print.header\u003c/name\u003e\n\t\u003cvalue\u003etrue\u003c/value\u003e\n\u003c/property\u003e\n\n\u003cproperty\u003e\n\t\u003cname\u003ehive.cli.print.current.db\u003c/name\u003e\n\t\u003cvalue\u003etrue\u003c/value\u003e\n\u003c/property\u003e\n\n\u003cproperty\u003e\n\u003cname\u003ehive.metastore.uris\u003c/name\u003e\n\u003cvalue\u003ethrift://127.0.0.1:9083\u003c/value\u003e\n\u003c/property\u003e\n\n\u003c/configuration\u003e\n"},"kind":"ConfigMap","metadata":{"annotations":{},"name":"spark-config","namespace":"preprod"}}
+  managedFields:
+    - manager: kubectl-client-side-apply
+      operation: Update
+      apiVersion: v1
+      time: '2022-06-30T15:52:49Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:data': {}
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:kubectl.kubernetes.io/last-applied-configuration': {}
+    - manager: dashboard
+      operation: Update
+      apiVersion: v1
+      time: '2022-07-01T13:36:24Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:data':
+          'f:core-site.xml': {}
+    - manager: kubectl-edit
+      operation: Update
+      apiVersion: v1
+      time: '2022-07-01T13:39:02Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:data':
+          'f:hive-site.xml': {}
+data:
+  core-site.xml: |
+    <?xml version="1.0" encoding="UTF-8"?>
+    <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+    <!--
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License. See accompanying LICENSE file.
+    -->
+
+    <!-- Put site-specific property overrides in this file. -->
+
+    <configuration>
+        <property>
+            <name>fs.default.name</name>
+            <value>hdfs://10.0.2.101:9000</value>
+        </property>
+    </configuration>
+  hive-site.xml: "<?xml version=\"1.0\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"configuration.xsl\"?>\n<configuration>\n\t<property>\n\t  <name>javax.jdo.option.ConnectionURL</name>\n\t  <value>jdbc:mysql://10.0.2.101:3306/meastore?createDatabaseIfNotExist=true&amp;useSSL=false</value>\n\t  <description>JDBC connect string for a JDBC metastore</description>\n\t</property>\n\n\t<property>\n\t  <name>javax.jdo.option.ConnectionDriverName</name>\n\t  <value>com.mysql.jdbc.Driver</value>\n\t  <description>Driver class name for a JDBC metastore</description>\n\t</property>\n\n\t<property>\n\t  <name>javax.jdo.option.ConnectionUserName</name>\n\t  <value>root</value>\n\t  <description>username to use against metastore database</description>\n\t</property>\n\n\t<property>\n\t  <name>javax.jdo.option.ConnectionPassword</name>\n\t  <value>7956214</value>\n\t  <description>password to use against metastore database</description>\n\t</property>\n\n<property>\n<name>hive.metastore.warehouse.dir</name>\n<value>/user/hive/warehouse</value>\n<description>location of default database for the warehouse</description>\n</property>\n\n<property>\n    <name>hive.metastore.schema.verification</name>\n    <value>false</value>\n</property>\n\n<property>\n\t<name>hive.cli.print.header</name>\n\t<value>true</value>\n</property>\n\n<property>\n\t<name>hive.cli.print.current.db</name>\n\t<value>true</value>\n</property>\n\n<property>\n<name>hive.metastore.uris</name>\n<value>thrift://10.0.2.101:9083</value>\n</property>\n\n</configuration>\n"

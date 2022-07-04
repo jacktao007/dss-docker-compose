@@ -1,0 +1,18 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: linkis-mg-gateway
+  labels:
+    app: linkis-mg-gateway
+    service: linkis-mg-gateway
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 9001
+      targetPort: 9001
+  selector:
+    app: linkis-mg-gateway
+  type: NodePort
+  sessionAffinity: None
+  externalTrafficPolicy: Cluster

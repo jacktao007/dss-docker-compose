@@ -1,0 +1,19 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: linkis-web
+  labels:
+    app: linkis-web
+    service: linkis-web
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8087
+      targetPort: 8087
+  selector:
+    app: linkis-web
+  clusterIP: 10.99.111.90
+  type: ClusterIP
+  sessionAffinity: None
+

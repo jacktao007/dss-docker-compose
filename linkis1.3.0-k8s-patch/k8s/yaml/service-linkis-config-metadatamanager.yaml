@@ -1,0 +1,18 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: headless-linkis-config-metadatamanager
+  labels:
+    app: headless-linkis-config-metadatamanager
+    service: headless-linkis-config-metadatamanager
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 9106
+      targetPort: 9106
+  selector:
+    app: linkis-config-metadatamanager
+  clusterIP: None
+  type: ClusterIP
+  sessionAffinity: None

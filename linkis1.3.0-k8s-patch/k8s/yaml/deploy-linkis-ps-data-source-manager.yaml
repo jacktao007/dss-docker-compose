@@ -1,0 +1,100 @@
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+# 
+#   http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: linkis-ps-data-source-manager
+  labels:
+    app: linkis-ps-data-source-manager
+    version: v1
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: linkis-ps-data-source-manager
+      version: v1
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: linkis-ps-data-source-manager
+        version: v1
+    spec:
+      volumes:
+        - name: conf
+          configMap:
+            name: linkis-config-data-source-manager
+            defaultMode: 420
+        - name: hadoop-config
+          configMap:
+            name: hadoop-config
+            defaultMode: 420
+        - name: hive-config
+          configMap:
+            name: hive-config
+            defaultMode: 420
+        - name: spark-config
+          configMap:
+            name: spark-config
+            defaultMode: 420
+        - name: log
+          emptyDir: {}
+      containers:
+        - name: linkis-ps-data-source-manager
+          image: 'registry.mydomain.com/library/linkis-ps-data-source-manager:1.2.0'
+          ports:
+            - containerPort: 9106
+              protocol: TCP
+          env:
+            - name: EUREKA_URL
+              value: 'http://linkis-mg-eureka:20303/eureka/'
+            - name: EUREKA_PREFER_IP
+              value: 'true'
+          resources:
+            limits:
+              cpu: '2'
+              memory: 1Gi
+            requests:
+              cpu: '1'
+              memory: 500Mi
+          volumeMounts:
+            - name: conf
+              mountPath: /opt/linkis/linkis-ps-data-source-manager/conf/
+            - name: hadoop-config
+              mountPath: /usr/local/hadoop/etc/hadoop
+            - name: hive-config
+              mountPath: /usr/local/hive/conf
+            - name: spark-config
+              mountPath: /usr/local/spark/conf
+            - name: log
+              mountPath: /opt/linkis/linkis-ps-data-source-manager/logs
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: Always
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
+
