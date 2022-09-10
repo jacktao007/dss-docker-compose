@@ -40,3 +40,7 @@ https://github.com/WeBankFinTech/DataSphereStudio/releases
 ## 鸣谢
 史寿伟的项目https://gitee.com/sswater/dss-docker-script  
 熊本人的版本https://pan.baidu.com/s/1aF9DqV6cEra_cA9ctuXrBA 提取码：a9mj 
+
+### Infrastructure model
+
+![Infrastructure model](.infragenie/infrastructure_model.png)
